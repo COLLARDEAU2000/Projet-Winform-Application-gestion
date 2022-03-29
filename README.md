@@ -52,6 +52,8 @@ Scénarios alternatifs
 4.1 Les informations ne sont pas valides. Le système en informe la secrétaire. Retour à 3
 5.1.5.1 Les modifications ne sont pas cohérentes, le système retourne un message d’erreurs
 sur les informations incohérentes. Retour à 5.1.4
+
+
 ![Capture](https://user-images.githubusercontent.com/100136803/160611869-b72965a6-2884-4dd5-a0e9-be3f895dfa4e.PNG)
 
 ![2](https://user-images.githubusercontent.com/100136803/160611870-9d914d9a-4e64-4846-b831-f70c4cd726c5.PNG)
