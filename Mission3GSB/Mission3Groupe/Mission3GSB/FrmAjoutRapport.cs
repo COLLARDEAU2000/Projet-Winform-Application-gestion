@@ -27,12 +27,6 @@ namespace Mission3GSB
             InitializeComponent();
             this.mesRapports = new gsbrapports2021Entities();
             this.mesRapports = mesRapports;
-            this.bdgRapport.DataSource = this.mesRapports.rapport.ToList();
-            this.bdgOffre.DataSource = this.mesRapports.offrir.ToList();
-            this.bdgMedicament.DataSource = this.mesRapports.medicament.ToList();
-            this.bdgMedecin.DataSource = this.mesRapports.medecin.ToList();
-            this.bdgVisiteur.DataSource = this.mesRapports.visiteur.ToList();
-            this.bdgFamille.DataSource = this.mesRapports.famille.ToList();
             
         }
 
@@ -41,8 +35,8 @@ namespace Mission3GSB
         {
             List<visiteur>lesVisiteur = this.mesRapports.visiteur.ToList();
 
-            var req = from em in  lesVisiteur
-                      select em.id;
+            var req = (from em in  lesVisiteur
+                      select em.id).Distinct();
 
             foreach (var em in req)
             {
@@ -54,8 +48,8 @@ namespace Mission3GSB
         {
             List<medecin> lesMedecin = this.mesRapports.medecin.ToList();
 
-            var req = from me in lesMedecin
-                      select me.id;
+            var req = (from me in lesMedecin
+                      select me.id).Distinct();
 
             foreach (var me in req)
             {
@@ -68,19 +62,33 @@ namespace Mission3GSB
         private void recupFamillePourMedicament()
         {
 
-
-           /* var req = from me in this.mesRapports.medicament
-                      where me.idFamille == this.comboBoxIdFamille.SelectedValue.ToString()
-                      select me.id;
+            var req =(from me in this.mesRapports.medicament
+                      select me.idFamille).Distinct();
 
 
             foreach (var me in req)
             {
-                comboBoxIdMedicament.Items.Add(me);
-            }*/
+                comboBoxIdFamille.Items.Add(me);
+                comboBoxIdFamille.SelectedIndex = 0;
+
+            }
 
 
 
+        }
+
+        private void getNomCommercial()
+        {
+            var req = (from me in this.mesRapports.medicament
+                       select me.nomCommercial).Distinct();
+
+
+            foreach (var me in req)
+            {
+                this.comboBoxNomCommercial.Items.Add(me);
+                comboBoxNomCommercial.SelectedIndex = 0;
+
+            }
         }
 
 
@@ -93,9 +101,13 @@ namespace Mission3GSB
 
         private void FrmAjoutRapport_Load(object sender, EventArgs e)
         {
-            //this.getVisiteurs();
-            //this.getMedecin();
+            this.getVisiteurs();
+            this.getMedecin();
+            this.getQuantite();
+            this.recupFamillePourMedicament();
+            this.getNomCommercial();
             this.textBoxIdRapport.Text = this.getIdRapportCree().ToString();
+            this.textBoxIdMedicament.Text = this.CreateIdMedicament();
 
 
         }
@@ -111,27 +123,64 @@ namespace Mission3GSB
             return n;
         }
 
+        // genere une cle primaire Medicament aleatoirement 
+        private string  CreateIdMedicament()
+        {
+            var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var Charsarr = new char[4];
+            var random = new Random();
+
+            for (int i = 0; i < Charsarr.Length; i++)
+            {
+                Charsarr[i] = characters[random.Next(characters.Length)];
+            }
+
+            string resultString = new string(Charsarr);
+
+            return resultString.ToString();
+        }
+
+
+        //remplis le combobox quantite jusqu'a 100
+
+        private void getQuantite()
+        {
+            for(int i = 1; i <= 100; i++)
+            {
+                this.comboBoxQuantite.Items.Add(i);
+
+            }
+        }
+
         //permet d'ajouter les infos d'un medicament d'un rapport 
 
-        private void InsertRapportMedicament()
+        private void InsertRapportExtemsion()
         {
 
-            // preparation des variables table medecament
+            // preparation des variables table medecament et offrir 
 
 
-            //string idMedicament = Convert.ToString(this.textNomMedicament.Text);
-            //string nomCommercial = Convert.ToString(this.comboBoxNomMedicament.SelectedValue);
-            //string idFamilleMedicament = Convert.ToString(this.comboBoxIdFamille.SelectedValue);
-            //string compostionMdicament = Convert.ToString(this.textBoxComposition.Text);
-            //string effetMedicament = Convert.ToString(this.textBoxEffets.Text);
-            //string contreIndication = Convert.ToString(this.textBoxContreIndication.Text);
+            string idMedicament = this.textBoxIdMedicament.Text;
+            string nomCommercial = Convert.ToString(this.comboBoxNomCommercial.Text);
+            string idFamilleMedicament = Convert.ToString(this.comboBoxIdFamille.Text);
+            string compostionMdicament = Convert.ToString(this.textBoxComposition.Text);
+            string effetMedicament = Convert.ToString(this.textBoxEffet.Text);
+            string contreIndication = Convert.ToString(this.textBoxContreIndication.Text);
+            int quantite = Convert.ToInt32(this.comboBoxQuantite.Text);
+            int idRapport = Convert.ToInt32(this.textBoxIdRapport.Text);
 
+            //instatention des instances (medicament et offrir) 
 
-            /*insertion des valeurs de l'occurence offrir 
-
+            offrir occurenceceOffrir = new offrir();
             medicament occurenceMedicament = new medicament();
 
-            / insertion des valeurs de l'occurence medicament 
+            //insertion des valeurs de l'occurence offrir 
+
+            occurenceceOffrir.idMedicament = idMedicament;
+            occurenceceOffrir.idRapport = idRapport;
+            occurenceceOffrir.quantite = quantite;
+
+            // insertion des valeurs de l'occurence medicament 
 
             occurenceMedicament.id = idMedicament;
             occurenceMedicament.idFamille = idFamilleMedicament;
@@ -141,41 +190,28 @@ namespace Mission3GSB
             occurenceMedicament.contreIndications =contreIndication;
 
             //Ajout dns la table medicament
-
+            this.mesRapports.offrir.Add(occurenceceOffrir);
             this.mesRapports.medicament.Add(occurenceMedicament);
-            this.bdgMedicament.EndEdit();*/
-
-
-
-
         }
 
         // permet d'ajouter un rapport
         private void InsertRapport()
         {
-            
 
-
-            //preparation des variables table Rapport
+            //preparation des variables table Rapport initiale 
 
             int idRapport = Convert.ToInt32(this.textBoxIdRapport.Text);
             DateTime dateRapport = this.dateTimeRapport.Value;
-            string rapportMotif = Convert.ToString(this.textboxMotif.Text.ToString());
-            string rapportBilan = Convert.ToString(this.textBilan.Text.ToString());
-            medecin idMedecin = (medecin)this.ComboListeMedecin.SelectedValue;
-            visiteur idVisiteur = (visiteur)this.comboListeVisiteur.SelectedValue;
-
-           
-            //preparation des variables table offrir 
-
-            //int Quantite = 0;
-
+            string rapportMotif = Convert.ToString(this.textboxMotif.Text);
+            string rapportBilan = Convert.ToString(this.textBilan.Text);
+            int  idMedecin =    Convert.ToInt32(this.ComboListeMedecin.Text);
+            string  idVisiteur = Convert.ToString(this.comboListeVisiteur.Text);
 
             //creation d'une occurence de type rapport */
 
             rapport occurenceRapport = new rapport();
-            medicament occurenceMedicament = new medicament();
-            offrir occurenceOfrre = new offrir();
+
+
 
             // insertion des valeurs de l'occurence rapport
 
@@ -183,22 +219,12 @@ namespace Mission3GSB
             occurenceRapport.date = dateRapport;
             occurenceRapport.motif = rapportMotif;
             occurenceRapport.bilan = rapportBilan;
-            occurenceRapport.medecin= idMedecin;
-            occurenceRapport.visiteur = idVisiteur;
-
-            
-
-            //occurenceOfrre.quantite = Quantite;*/
-
+            occurenceRapport.idMedecin= idMedecin;
+            occurenceRapport.idVisiteur = idVisiteur;
 
             //Enregistrement Formulaire Ajout rapport 
 
-            //recupDonneRapport.Insert((idRapport-1),occurence);
-            //this.bdgRapport.Add(occurence);
-            //this.bdgRapport.AddNew();
-            //this.mesRapports.SaveChangesAsync();
             this.mesRapports.rapport.Add(occurenceRapport);
-            this.bdgRapport.EndEdit();
 
 
 
@@ -210,6 +236,7 @@ namespace Mission3GSB
 
 
             this.InsertRapport();
+            this.InsertRapportExtemsion();
             this.mesRapports.SaveChanges();
             MessageBox.Show($"Rapport N{this.getIdRapportCree()-1} ajouter !");
 
@@ -219,8 +246,6 @@ namespace Mission3GSB
         private void textBoxIdRapport_TextChanged(object sender, EventArgs e)
         {
 
-            this.textBoxIdRapport.Text = this.getIdRapportCree().ToString();
-            
         }
 
 

@@ -40,27 +40,27 @@ namespace Mission3GSB
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxMotif = new System.Windows.Forms.TextBox();
             this.textBoxIdRapport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.textBoxBilan = new System.Windows.Forms.TextBox();
             this.textIdRapports = new System.Windows.Forms.Label();
-            this.textBoxMotif = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBoxContreIndication = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxComposition = new System.Windows.Forms.TextBox();
+            this.textBoxEffets = new System.Windows.Forms.TextBox();
+            this.textBoxNomCommercial = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.textBoxIdFamille = new System.Windows.Forms.TextBox();
             this.textBoxQuantite = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxIdMedicament = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxNomCommercial = new System.Windows.Forms.TextBox();
-            this.textBoxEffets = new System.Windows.Forms.TextBox();
-            this.textBoxComposition = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxContreIndication = new System.Windows.Forms.TextBox();
             this.bdgRapports = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -70,7 +70,7 @@ namespace Mission3GSB
             // 
             // buttonEnregistrerXml
             // 
-            this.buttonEnregistrerXml.Location = new System.Drawing.Point(510, 495);
+            this.buttonEnregistrerXml.Location = new System.Drawing.Point(471, 493);
             this.buttonEnregistrerXml.Name = "buttonEnregistrerXml";
             this.buttonEnregistrerXml.Size = new System.Drawing.Size(145, 23);
             this.buttonEnregistrerXml.TabIndex = 1;
@@ -122,7 +122,7 @@ namespace Mission3GSB
             // 
             // LancerFiltreRapport
             // 
-            this.LancerFiltreRapport.Location = new System.Drawing.Point(376, 97);
+            this.LancerFiltreRapport.Location = new System.Drawing.Point(358, 97);
             this.LancerFiltreRapport.Name = "LancerFiltreRapport";
             this.LancerFiltreRapport.Size = new System.Drawing.Size(75, 23);
             this.LancerFiltreRapport.TabIndex = 24;
@@ -172,6 +172,15 @@ namespace Mission3GSB
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Element Rapport fiche initiale :";
             // 
+            // textBoxMotif
+            // 
+            this.textBoxMotif.Location = new System.Drawing.Point(549, 80);
+            this.textBoxMotif.Multiline = true;
+            this.textBoxMotif.Name = "textBoxMotif";
+            this.textBoxMotif.ReadOnly = true;
+            this.textBoxMotif.Size = new System.Drawing.Size(212, 52);
+            this.textBoxMotif.TabIndex = 27;
+            // 
             // textBoxIdRapport
             // 
             this.textBoxIdRapport.Location = new System.Drawing.Point(6, 80);
@@ -218,15 +227,6 @@ namespace Mission3GSB
             this.textIdRapports.Text = "idRapport :";
             this.textIdRapports.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBoxMotif
-            // 
-            this.textBoxMotif.Location = new System.Drawing.Point(549, 80);
-            this.textBoxMotif.Multiline = true;
-            this.textBoxMotif.Name = "textBoxMotif";
-            this.textBoxMotif.ReadOnly = true;
-            this.textBoxMotif.Size = new System.Drawing.Size(212, 52);
-            this.textBoxMotif.TabIndex = 27;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.textBoxContreIndication);
@@ -249,6 +249,77 @@ namespace Mission3GSB
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Element Rapport Extension  :";
+            // 
+            // textBoxContreIndication
+            // 
+            this.textBoxContreIndication.Location = new System.Drawing.Point(699, 63);
+            this.textBoxContreIndication.Multiline = true;
+            this.textBoxContreIndication.Name = "textBoxContreIndication";
+            this.textBoxContreIndication.ReadOnly = true;
+            this.textBoxContreIndication.Size = new System.Drawing.Size(220, 80);
+            this.textBoxContreIndication.TabIndex = 35;
+            this.textBoxContreIndication.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(696, 47);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 13);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Contre Indications :";
+            // 
+            // textBoxComposition
+            // 
+            this.textBoxComposition.Location = new System.Drawing.Point(458, 63);
+            this.textBoxComposition.Name = "textBoxComposition";
+            this.textBoxComposition.ReadOnly = true;
+            this.textBoxComposition.Size = new System.Drawing.Size(100, 20);
+            this.textBoxComposition.TabIndex = 33;
+            // 
+            // textBoxEffets
+            // 
+            this.textBoxEffets.Location = new System.Drawing.Point(586, 63);
+            this.textBoxEffets.Name = "textBoxEffets";
+            this.textBoxEffets.ReadOnly = true;
+            this.textBoxEffets.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEffets.TabIndex = 32;
+            // 
+            // textBoxNomCommercial
+            // 
+            this.textBoxNomCommercial.Location = new System.Drawing.Point(324, 63);
+            this.textBoxNomCommercial.Name = "textBoxNomCommercial";
+            this.textBoxNomCommercial.ReadOnly = true;
+            this.textBoxNomCommercial.Size = new System.Drawing.Size(100, 20);
+            this.textBoxNomCommercial.TabIndex = 31;
+            this.textBoxNomCommercial.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(321, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 13);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "Nom Commercial :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(455, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Composition  :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(583, 47);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Effets  :";
             // 
             // textBoxIdFamille
             // 
@@ -302,77 +373,6 @@ namespace Mission3GSB
             this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 24;
             this.label7.Text = "Quantite : ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(583, 47);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Effets  :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(455, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 13);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Composition  :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(321, 47);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 13);
-            this.label10.TabIndex = 30;
-            this.label10.Text = "Nom Commercial :";
-            // 
-            // textBoxNomCommercial
-            // 
-            this.textBoxNomCommercial.Location = new System.Drawing.Point(324, 63);
-            this.textBoxNomCommercial.Name = "textBoxNomCommercial";
-            this.textBoxNomCommercial.ReadOnly = true;
-            this.textBoxNomCommercial.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNomCommercial.TabIndex = 31;
-            this.textBoxNomCommercial.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // textBoxEffets
-            // 
-            this.textBoxEffets.Location = new System.Drawing.Point(586, 63);
-            this.textBoxEffets.Name = "textBoxEffets";
-            this.textBoxEffets.ReadOnly = true;
-            this.textBoxEffets.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEffets.TabIndex = 32;
-            // 
-            // textBoxComposition
-            // 
-            this.textBoxComposition.Location = new System.Drawing.Point(458, 63);
-            this.textBoxComposition.Name = "textBoxComposition";
-            this.textBoxComposition.ReadOnly = true;
-            this.textBoxComposition.Size = new System.Drawing.Size(100, 20);
-            this.textBoxComposition.TabIndex = 33;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(696, 47);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 13);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Contre Indications :";
-            // 
-            // textBoxContreIndication
-            // 
-            this.textBoxContreIndication.Location = new System.Drawing.Point(699, 63);
-            this.textBoxContreIndication.Multiline = true;
-            this.textBoxContreIndication.Name = "textBoxContreIndication";
-            this.textBoxContreIndication.ReadOnly = true;
-            this.textBoxContreIndication.Size = new System.Drawing.Size(220, 80);
-            this.textBoxContreIndication.TabIndex = 35;
-            this.textBoxContreIndication.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // bdgRapports
             // 
