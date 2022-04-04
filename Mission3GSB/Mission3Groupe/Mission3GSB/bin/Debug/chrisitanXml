@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rapportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>3</id>
+  <date>2022-03-31T02:07:11</date>
+  <bilan />
+  <motif />
+  <idMedecin>0</idMedecin>
+  <idVisiteur>a131</idVisiteur>
+  <quantite>0</quantite>
+</rapportXml>

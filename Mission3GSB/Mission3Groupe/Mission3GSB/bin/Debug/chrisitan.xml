@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rapportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>15</id>
+  <date>2021-10-02T00:00:00</date>
+  <bilan>Très aimable maintenir un contact régulier</bilan>
+  <motif>Visite annuelle</motif>
+  <idMedecin>982</idMedecin>
+  <idVisiteur>a131</idVisiteur>
+  <quantite>2</quantite>
+  <idMedicament>AMOPIL7</idMedicament>
+  <nomCommercial>AMOPIL</nomCommercial>
+  <idFamille>ABP</idFamille>
+  <composition>Amoxicilline</composition>
+  <effets>Amoxicilline</effets>
+  <contreIndication>mm</contreIndication>
+</rapportXml>
