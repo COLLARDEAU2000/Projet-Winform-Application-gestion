@@ -30,6 +30,7 @@ namespace Mission3GSB
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModificationRapport));
             this.dataGridViewModification = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,6 +71,7 @@ namespace Mission3GSB
             // dataGridViewModification
             // 
             this.dataGridViewModification.AutoGenerateColumns = false;
+            this.dataGridViewModification.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewModification.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewModification.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -89,7 +91,7 @@ namespace Mission3GSB
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(63, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Date : ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -99,7 +101,7 @@ namespace Mission3GSB
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(382, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "ID Visiteur :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -107,26 +109,28 @@ namespace Mission3GSB
             // comboListeVisiteur
             // 
             this.comboListeVisiteur.FormattingEnabled = true;
-            this.comboListeVisiteur.Location = new System.Drawing.Point(385, 45);
+            this.comboListeVisiteur.Location = new System.Drawing.Point(386, 55);
             this.comboListeVisiteur.Name = "comboListeVisiteur";
-            this.comboListeVisiteur.Size = new System.Drawing.Size(164, 21);
+            this.comboListeVisiteur.Size = new System.Drawing.Size(164, 28);
             this.comboListeVisiteur.TabIndex = 4;
             // 
             // dateTimeRapport
             // 
-            this.dateTimeRapport.Location = new System.Drawing.Point(6, 46);
+            this.dateTimeRapport.Location = new System.Drawing.Point(6, 57);
             this.dateTimeRapport.Name = "dateTimeRapport";
-            this.dateTimeRapport.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeRapport.Size = new System.Drawing.Size(200, 26);
             this.dateTimeRapport.TabIndex = 5;
             this.dateTimeRapport.Value = new System.DateTime(2021, 10, 2, 0, 0, 0, 0);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.buttonFiltre);
             this.groupBox1.Controls.Add(this.dateTimeRapport);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboListeVisiteur);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(106, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(566, 177);
@@ -138,7 +142,7 @@ namespace Mission3GSB
             // 
             this.buttonFiltre.Location = new System.Drawing.Point(231, 127);
             this.buttonFiltre.Name = "buttonFiltre";
-            this.buttonFiltre.Size = new System.Drawing.Size(75, 23);
+            this.buttonFiltre.Size = new System.Drawing.Size(75, 30);
             this.buttonFiltre.TabIndex = 7;
             this.buttonFiltre.Text = "Filtrer ";
             this.buttonFiltre.UseVisualStyleBackColor = true;
@@ -146,9 +150,10 @@ namespace Mission3GSB
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(337, 714);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(337, 691);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(109, 34);
             this.button1.TabIndex = 8;
             this.button1.Text = "Enregistrer";
             this.button1.UseVisualStyleBackColor = true;
@@ -157,6 +162,7 @@ namespace Mission3GSB
             // dataGridViewMedcicament
             // 
             this.dataGridViewMedcicament.AutoGenerateColumns = false;
+            this.dataGridViewMedcicament.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewMedcicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMedcicament.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -174,6 +180,7 @@ namespace Mission3GSB
             // dataGridViewOffrir
             // 
             this.dataGridViewOffrir.AutoGenerateColumns = false;
+            this.dataGridViewOffrir.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewOffrir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOffrir.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idRapportDataGridViewTextBoxColumn,
@@ -182,7 +189,7 @@ namespace Mission3GSB
             this.dataGridViewOffrir.DataSource = this.bdgOfrrir;
             this.dataGridViewOffrir.Location = new System.Drawing.Point(209, 508);
             this.dataGridViewOffrir.Name = "dataGridViewOffrir";
-            this.dataGridViewOffrir.Size = new System.Drawing.Size(340, 150);
+            this.dataGridViewOffrir.Size = new System.Drawing.Size(347, 150);
             this.dataGridViewOffrir.TabIndex = 10;
             // 
             // idRapportDataGridViewTextBoxColumn
@@ -293,6 +300,7 @@ namespace Mission3GSB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.dataGridViewOffrir);
             this.Controls.Add(this.dataGridViewMedcicament);
@@ -301,6 +309,7 @@ namespace Mission3GSB
             this.Controls.Add(this.dataGridViewModification);
             this.Name = "FrmModificationRapport";
             this.Text = "FrmModificationRapport";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmModificationRapport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModification)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -122,11 +122,19 @@ namespace Mission3GSB
         private void button1_Click(object sender, EventArgs e)
         {
 
-            this.bdgRapport.EndEdit();
-            this.bdgOfrrir.EndEdit();
-            this.bdgMedicament.EndEdit();
-            this.gsbrapports.SaveChanges();
-            MessageBox.Show($"Rapport Mise a jour !");
+            try
+            {
+                this.bdgRapport.EndEdit();
+                this.bdgOfrrir.EndEdit();
+                this.bdgMedicament.EndEdit();
+                this.gsbrapports.SaveChanges();
+                MessageBox.Show($"Rapport Mise a jour !");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Probleme lors de la mise a jour verifier les champs de numero(numero visiteur,numuro famille)");
+            }
+
         }
     }
 }
