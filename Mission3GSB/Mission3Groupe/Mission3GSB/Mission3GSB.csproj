@@ -112,6 +112,12 @@
     <Compile Include="FrmAjoutRapport.Designer.cs">
       <DependentUpon>FrmAjoutRapport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmModificationRapport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificationRapport.Designer.cs">
+      <DependentUpon>FrmModificationRapport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRapport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAjoutRapport.resx">
       <DependentUpon>FrmAjoutRapport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificationRapport.resx">
+      <DependentUpon>FrmModificationRapport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRapport.resx">
       <DependentUpon>FrmRapport.cs</DependentUpon>
@@ -234,9 +243,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="procedure stocke\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -239,7 +239,7 @@ namespace Mission3GSB
             this.InsertRapportExtemsion();
             this.mesRapports.SaveChanges();
             MessageBox.Show($"Rapport N{this.getIdRapportCree()-1} ajouter !");
-
+            this.Close();
 
         }
 

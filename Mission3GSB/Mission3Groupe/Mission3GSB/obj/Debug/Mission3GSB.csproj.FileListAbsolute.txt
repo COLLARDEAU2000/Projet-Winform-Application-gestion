@@ -253,3 +253,4 @@ F:\mission3-git\Mission3GSB\Mission3Groupe\Mission3GSB\obj\Debug\Mission3GSB.csp
 F:\mission3-git\Mission3GSB\Mission3Groupe\Mission3GSB\obj\Debug\Mission3GSB.csproj.CopyComplete
 F:\mission3-git\Mission3GSB\Mission3Groupe\Mission3GSB\obj\Debug\Mission3GSB.exe
 F:\mission3-git\Mission3GSB\Mission3Groupe\Mission3GSB\obj\Debug\Mission3GSB.pdb
+F:\mission3-git\Mission3GSB\Mission3Groupe\Mission3GSB\obj\Debug\Mission3GSB.FrmModificationRapport.resources

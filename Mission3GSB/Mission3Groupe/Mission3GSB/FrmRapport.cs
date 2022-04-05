@@ -17,6 +17,7 @@ namespace Mission3GSB
         {
             InitializeComponent();
             this.mesRapports = new gsbrapports2021Entities();
+            
         }
 
         private void FrmRapport_Load(object sender, EventArgs e)
@@ -49,8 +50,8 @@ namespace Mission3GSB
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmModifierRapport f = new FrmModifierRapport(this.mesRapports);
-            //f.Show();
+            FrmModificationRapport f = new FrmModificationRapport(this.mesRapports);
+            f.Show();
         }
     }
 }
