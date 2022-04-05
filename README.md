@@ -53,3 +53,10 @@ Scénarios alternatifs
 5.1.5.1 Les modifications ne sont pas cohérentes, le système retourne un message d’erreurs
 sur les informations incohérentes. Retour à 5.1.4
 
+![1](https://user-images.githubusercontent.com/100136803/161813946-8fcf34b4-bb23-4669-8d44-07e12705fa9c.PNG)
+
+![2](https://user-images.githubusercontent.com/100136803/161813960-d8160876-6ace-49ca-9649-bafae6b44f6b.PNG)
+![3](https://user-images.githubusercontent.com/100136803/161813967-16a58bcd-5a18-4160-9f83-364eb707f906.PNG)
+![4](https://user-images.githubusercontent.com/100136803/161813980-e560d0d4-3e77-48b0-bcb2-bab02f0244cb.PNG)
+![5](https://user-images.githubusercontent.com/100136803/161813987-2e57d797-eb27-45cf-a083-377d6fd93eef.PNG)
+![6](https://user-images.githubusercontent.com/100136803/161814004-81d4cd16-126c-4e4d-b606-3011d7461f2d.PNG)
